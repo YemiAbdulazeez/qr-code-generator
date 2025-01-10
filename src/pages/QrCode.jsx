@@ -6,7 +6,7 @@ import QRCode from "qrcode";
 const QrCodeApp = () => {
   const [url, setUrl] = useState("");
   const [qrcode, setQrcode] = useState("");
-  const [darkColor, setDarkColor] = useState("#e99022FF");
+  const [darkColor, setDarkColor] = useState("#FFB700FF");
   const [lightColor, setLightColor] = useState("#FFFFFFFF");
   const [logo, setLogo] = useState(null);
   const [error, setError] = useState("");
@@ -91,10 +91,10 @@ const QrCodeApp = () => {
   }, [url, darkColor, lightColor, logo]);
 
   return (
-    <div className="lg:min-h-screen max-h-max flex flex-col items-center justify-center lg:bg-[#171717] bg-black font-Urbanist text-white lg:px-0 px-6">
+    <div className="lg:min-h-screen max-h-max flex flex-col items-center justify-center lg:bg-[#171717] bg-[#121212] font-Urbanist text-white lg:px-0 px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 w-full lg:mt-16 lg:mb-12 my-10 max-w-7xl mx-auto shadow-lg">
         <div
-          className="relative hidden md:block bg-cover bg-center rounded-s-xl bg-black"
+          className="relative hidden md:block bg-cover bg-center rounded-s-xl bg-[#121212]"
           style={{ backgroundImage: `url(${SideImg})` }}
         >
           <img
@@ -104,7 +104,7 @@ const QrCodeApp = () => {
           />
         </div>
 
-        <div className=" relative lg:p-16 px-4 bg-black ">
+        <div className=" relative lg:p-16 px-4 bg-[#121212] ">
           <img
             src={Logo}
             alt="Logo"
@@ -188,8 +188,10 @@ const QrCodeApp = () => {
           </div>
         </div>
 
-        <div className="lg:px-16 lg:py-14 px-4 bg-black rounded-e-xl">
-          <p className="text-center py-4">QR code will appear below:</p>
+        <div className="lg:px-16 lg:py-14 px-4 bg-[#121212] rounded-e-xl">
+          <p className="text-center py-4">
+            QR code will appear in the box below:
+          </p>
           <div
             className="border-4 pt-6 lg:h-96 h-[27.5rem] px-4 rounded-xl"
             style={{ borderColor: darkColor }}
@@ -214,7 +216,7 @@ const QrCodeApp = () => {
                   </a>
                 </div>
                 {downloaded && (
-                  <p className="text-green-500 text-sm mt-2">
+                  <p className="text-green-500 text-sm mt-6">
                     Your QR code has been downloaded successfully!
                   </p>
                 )}
